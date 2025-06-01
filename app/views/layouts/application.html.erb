@@ -19,6 +19,12 @@
       |
       <a href="/logout">Logout</a>
     </p>
+    <p>
+      <%= @current_user["first_name"]%> |
+      <a href="/sessions/new">Login</a> |
+      <a href="/users/new">Sign Up</a>
+    </p>
+
 
     <p>
       <%= flash["notice"] %>

@@ -8,8 +8,8 @@
 
 <p><a href="/companies/<%= @company["id"] %>">Back to <%= @company["name"] %> Contacts</a></p>
 
+<% if @current_user %>
 <p><a href="/contacts/<%= @contact["id"] %>/edit">Edit Contact</a></p>
-
 <form action="/contacts/<%= @contact["id"] %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button>Delete Contact</button>
@@ -48,3 +48,10 @@
 
   <button>Submit</button>
 </form>
+<% end %>
+
+
+
+
+
+

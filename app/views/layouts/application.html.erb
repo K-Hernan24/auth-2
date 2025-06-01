@@ -13,19 +13,13 @@
     <p>
       <!-- if no user logged-in, display signup and login links -->
       <!-- else, if user logged-in, display user name and logout link -->
-      <a href="/users/new">Sign Up</a>
-      |
-      <a href="/login">Login</a>
-      |
-      <a href="/logout">Logout</a>
+      <% if @current_user %>
+          <%= @current_user["first_name"]%>
+          <a href="/logout">Logout</a>
+      <% else %>
+          <a href="/login">Login</a> | <a href="/users/new">Sign Up</a>
+      <% end %>
     </p>
-    <p>
-      <%= @current_user["first_name"]%> |
-      <a href="/sessions/new">Login</a> |
-      <a href="/users/new">Sign Up</a>
-    </p>
-
-
     <p>
       <%= flash["notice"] %>
     </p>
